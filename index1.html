@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Site Maths AABIL</title>
+    <title>Site Maths AABIL - Corrigés</title>
 
     <link rel="icon" href="logopi.png" type="image/png">
 
@@ -16,16 +15,24 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             background-color: #f4f4f9;
+            background-image: url('fond.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #333;
         }
 
         header {
-            background-color: #10421d;
+            background-color: rgba(16, 66, 29, 0.95);
             color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .container {
@@ -41,8 +48,9 @@
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: #fff;
+            letter-spacing: 1px;
         }
 
         #check {
@@ -55,7 +63,7 @@
             align-items: center;
             list-style: none;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 8px;
         }
 
         .nav-link {
@@ -67,11 +75,11 @@
             align-items: center;
             justify-content: space-between;
             gap: 8px;
-            padding: 12px 18px;
+            padding: 10px 18px;
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
             border-radius: 4px;
         }
 
@@ -79,15 +87,15 @@
             background-color: #0c33c1;
         }
 
-        /* Style spécifique pour le bouton Enoncés */
+        /* Style spécifique pour le bouton Enoncés sur la page Corrigés */
         .nav-link > a#sujets {
-            background-color: #e8f5e9;
-            color: #e51e1b;
-            border: 1px solid #c79b75;
+            background-color: #ffffff;
+            color: #10421d;
+            border: 1px solid #ffffff;
         }
 
         .nav-link > a#sujets:hover {
-            background-color: #c8e6c9;
+            background-color: #e2e2e2;
         }
 
         /* Menus déroulants */
@@ -96,17 +104,17 @@
             top: 100%;
             left: 0;
             min-width: 280px;
-            background-color: #34495e;
+            background-color: rgba(52, 73, 94, 0.98);
             display: none;
             list-style: none;
             z-index: 100;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             max-height: 380px;
             overflow-y: auto;
-            border-radius: 0 0 4px 4px;
+            border-radius: 0 0 6px 6px;
         }
 
-        /* Inversion du menu déroulant sur la droite */
+        /* Inversion du menu déroulant sur la droite pour le dernier lien */
         .nav-link:last-child .dropdown {
             left: auto;
             right: 0;
@@ -120,7 +128,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 12px;
+            padding: 10px 14px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -139,29 +147,30 @@
             gap: 6px;
         }
 
-        /* Style des boutons Normale et Rattrapage */
+        /* Nouvelles couleurs pour les boutons d'examen */
         .btn-exam {
-            padding: 5px 8px;
+            padding: 5px 10px;
             font-size: 0.8rem;
             color: #fff;
-            background-color: #1abc9c;
+            background-color: #2980b9; /* Bleu moderne pour Normale */
             text-decoration: none;
             border-radius: 3px;
+            font-weight: 600;
             transition: background 0.2s, transform 0.1s;
         }
 
         .btn-exam:hover {
-            background-color: #16a085;
+            background-color: #1c5980;
             transform: scale(1.05);
         }
 
-        /* Différenciation pour la session de rattrapage */
+        /* Différenciation pour la session de rattrapage (Nouveau violet) */
         .btn-exam.rattrapage {
-            background-color: #e67e22;
+            background-color: #8e44ad;
         }
 
         .btn-exam.rattrapage:hover {
-            background-color: #d35400;
+            background-color: #6c3483;
         }
 
         /* Affichage au survol */
@@ -174,6 +183,141 @@
             content: "▼";
             font-size: 0.6em;
             margin-left: 5px;
+        }
+
+        /* ======================================= */
+        /* STYLES SECTION BIENVENUE & DEUX BOUTONS */
+        /* ======================================= */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 40px 30px;
+            border-radius: 12px;
+            max-width: 700px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-content h1 {
+            font-size: 2.2rem;
+            color: #10421d;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .main-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #10421d;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .main-btn:hover {
+            background-color: #1b6b30;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .main-btn.active {
+            background-color: #0c33c1;
+        }
+
+        .main-btn.active:hover {
+            background-color: #092691;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .nav-links > ul {
+                flex-direction: column;
+            }
+
+            .hero-content {
+                padding: 25px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+        .welcome-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 20px;
+        }
+
+        .bienvenue {
+            background: rgba(15, 23, 42, 0.75); 
+            backdrop-filter: blur(8px);      
+            -webkit-backdrop-filter: blur(8px);
+            padding: 40px 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+            color: white;
+            max-width: 620px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .bienvenue h1 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .bienvenue a {
+            color: #f0f9ff;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 500;
+            display: block;
+            margin: 14px 0;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .bienvenue a:hover {
+            background: rgba(2, 132, 199, 0.8);
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
         }
 
         /* Responsive Mobile */
@@ -192,7 +336,7 @@
     <div class="container">
 
         <div class="logo-container">
-            <h3 class="logo">Sujets Du Bac</h3>
+            <h3 class="logo">Corrigés Du Bac</h3>
         </div>
 
         <div class="nav-btn">
@@ -202,16 +346,16 @@
                 <ul>
 
                     <!-- ========================= -->
-                    <!-- SECTION ENONCES            -->
+                    <!-- SECTION ENONCES           -->
                     <!-- ========================= -->
 
                     <li class="nav-link">
-                        <a id="sujets" href="index.html">Enoncés</a>
+                        <a id="sujets" href="index.html">Énoncés</a>
                     </li>
 
 
                     <!-- ========================= -->
-                    <!-- SECTION SP & SVT            -->
+                    <!-- SECTION SP & SVT          -->
                     <!-- ========================= -->
 
                     <li class="nav-link">
@@ -383,7 +527,7 @@
 
 
                     <!-- ========================= -->
-                    <!-- SECTION SMA & B             -->
+                    <!-- SECTION SMA & B           -->
                     <!-- ========================= -->
 
                     <li class="nav-link">
@@ -554,7 +698,7 @@
 
 
                     <!-- ========================= -->
-                    <!-- SECTION SE / SG             -->
+                    <!-- SECTION SE / SG           -->
                     <!-- ========================= -->
 
                     <li class="nav-link">
@@ -621,102 +765,6 @@
                                     </div>
                                 </li>
 
-                                <li class="dropdown-item">
-                                    <span class="year-label">2015</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_15C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_15C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2016</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_16C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_16C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2017</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_17C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_17C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2018</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_18C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_18C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2019</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_19C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_19C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2020</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_20C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_20C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2021</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_21C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_21C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2022</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_22C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_22C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2023</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_23C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_23C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2024</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_24C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_24C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2025</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_25C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_25C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
-                                <li class="dropdown-item">
-                                    <span class="year-label">2026</span>
-                                    <div class="btn-group">
-                                        <a href="SE_N_26C.html" class="btn-exam">Normale</a>
-                                        <a href="SE_R_26C.html" class="btn-exam rattrapage">Rattrapage</a>
-                                    </div>
-                                </li>
-
                             </ul>
 
                         </div>
@@ -733,6 +781,18 @@
 
 </header>
 
+<!-- ========================= -->
+<!-- SECTION BIENVENUE         -->
+<!-- ========================= -->
+<section class="hero">
+    <div class="welcome-wrapper">
+        <div class="bienvenue">
+            <h1>Bienvenue sur Site Maths AABIL !</h1>
+            <a href="https://baccspsvt.web.app">Sujets du Bac SP & SVT par thèmes</a> 
+            <a href="https://bacsmmath.web.app">Sujets du Bac SMF par thèmes</a> 
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
-```
