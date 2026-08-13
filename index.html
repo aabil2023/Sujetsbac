@@ -13,33 +13,43 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /* --- Image de fond responsive --- */
         body {
-            background-color: #f4f4f9;
+            background-color: #1f2937;
+            background-image: url('fond.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
         }
 
+        /* Header sombre assorti au cadre du tableau */
         header {
-            background-color: #2c3e50;
+            background-color: rgba(31, 41, 55, 0.95);
             color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .container {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centrage global du contenu */
-            padding: 10px 20px;
+            align-items: center;
+            padding: 12px 20px;
         }
 
         .logo-container {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-align: center;
         }
 
         .logo {
-            font-size: 1.4rem;
-            color: #fff;
+            font-size: 1.5rem;
+            color: #f8fafc;
+            letter-spacing: 0.5px;
         }
 
         #check {
@@ -53,7 +63,7 @@
             align-items: center;
             list-style: none;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 6px;
         }
 
         .nav-link {
@@ -65,27 +75,29 @@
             align-items: center;
             justify-content: space-between;
             gap: 8px;
-            padding: 12px 18px;
-            color: #fff;
+            padding: 10px 16px;
+            color: #f1f5f9;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            border-radius: 6px;
         }
 
         .nav-link:hover > a {
-            background-color: #34495e;
+            background-color: #374151;
+            color: #ffffff;
         }
 
-        /* Style spécifique pour le bouton Corrigés */
+        /* Style harmonisé pour le bouton Corrigés (Bleu ciel très doux) */
         .nav-link > a#sujets {
-            background-color: #e8f5e9; /* Fond vert clair */
-            color: #2e7d32;            /* Texte vert foncé */
-            border: 1px solid #a5d6a7;  /* Bordure verte douce */
+            background-color: #e0f2fe; 
+            color: #0369a1;            
+            border: 1px solid #bae6fd;  
         }
 
         .nav-link > a#sujets:hover {
-            background-color: #c8e6c9; /* Vert légèrement plus soutenu au survol */
+            background-color: #bae6fd;
+            color: #0284c7;
         }
 
         /* Menus Déroulants */
@@ -93,18 +105,18 @@
             position: absolute;
             top: 100%;
             left: 0;
-            min-width: 280px; /* Élargi pour contenir l'année et les deux boutons */
-            background-color: #34495e;
+            min-width: 290px;
+            background-color: #374151;
             display: none;
             list-style: none;
             z-index: 100;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.35);
             max-height: 380px;
             overflow-y: auto;
-            border-radius: 0 0 4px 4px;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Inversion du menu déroulant sur la droite pour éviter qu'il ne sorte de l'écran */
         .nav-link:last-child .dropdown {
             left: auto;
             right: 0;
@@ -114,21 +126,20 @@
             list-style: none;
         }
 
-        /* Alignement en ligne de l'année et des deux boutons */
         .dropdown-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 8px 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
         .dropdown-item:hover {
-            background-color: #2c3e50;
+            background-color: #1f2937;
         }
 
         .year-label {
-            color: #fff;
+            color: #f3f4f6;
             font-weight: bold;
             font-size: 0.95rem;
         }
@@ -138,29 +149,30 @@
             gap: 6px;
         }
 
-        /* Style des deux boutons Normale et Rattrapage */
+        /* Bouton Session Normale : Bleu profond */
         .btn-exam {
-            padding: 5px 8px;
+            padding: 6px 10px;
             font-size: 0.8rem;
-            color: #fff;
-            background-color: #1abc9c;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #0284c7;
             text-decoration: none;
-            border-radius: 3px;
-            transition: background 0.2s, transform 0.1s;
+            border-radius: 4px;
+            transition: all 0.2s ease;
         }
 
         .btn-exam:hover {
-            background-color: #16a085;
-            transform: scale(1.05);
+            background-color: #0369a1;
+            transform: translateY(-1px);
         }
 
-        /* Différenciation subtile pour la session de rattrapage */
+        /* Bouton Session Rattrapage : Ambre / Miel chaud */
         .btn-exam.rattrapage {
-            background-color: #e67e22;
+            background-color: #d97706;
         }
 
         .btn-exam.rattrapage:hover {
-            background-color: #d35400;
+            background-color: #b45309;
         }
 
         /* Affichage au survol */
@@ -168,11 +180,62 @@
             display: block;
         }
 
-        /* Flèches indicatrices */
         .arrow-down::after {
             content: "▼";
             font-size: 0.6em;
             margin-left: 5px;
+            opacity: 0.8;
+        }
+
+        /* --- Section Bienvenue --- */
+        .welcome-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 20px;
+        }
+
+        .bienvenue {
+            background: rgba(15, 23, 42, 0.75); 
+            backdrop-filter: blur(8px);      
+            -webkit-backdrop-filter: blur(8px);
+            padding: 40px 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+            color: white;
+            max-width: 620px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .bienvenue h1 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .bienvenue a {
+            color: #f0f9ff;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 500;
+            display: block;
+            margin: 14px 0;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .bienvenue a:hover {
+            background: rgba(2, 132, 199, 0.8);
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
         }
 
         /* Responsive Mobile */
@@ -185,6 +248,7 @@
 </head>
 
 <body>
+   
     <header>
         <div class="container">
             <div class="logo-container">
@@ -287,6 +351,14 @@
             </div>
         </div>
     </header>
-</body>
 
+    <div class="welcome-wrapper">
+        <div class="bienvenue">
+            <h1>Bienvenue sur Site Maths AABIL !</h1>
+            <a href="https://baccspsvt.web.app">Sujets du Bac SP & SVT par thèmes</a> 
+            <a href="https://bacsmmath.web.app">Sujets du Bac SMF par thèmes</a> 
+        </div>
+    </div>
+
+</body>
 </html>
