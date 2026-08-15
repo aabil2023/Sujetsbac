@@ -255,6 +255,22 @@
                 flex-direction: column;
             }
         }
+        .visitor-counter {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+  }
+  .visitor-counter img {
+    display: block;
+    height: 20px;
+  }
     </style>
 </head>
 
@@ -371,9 +387,9 @@
             <a href="https://bacsmmath.web.app">Sujets du Bac SMF par thèmes</a> 
         </div>
     </div>
-    <!-- Badge basé sur un compteur via CountAPI -->
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Faabil2023.github.io%2FSujetsbac&count_bg=%237952B3&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visites&edge_flat=false" alt="Compteur de visites" />
-<footer id="footer">
+   <div class="visitor-counter">
+  <img src="https://hit.y2k.res.eng.br/aabil2023_sujetsbac/badge.svg?label=Visites&color=7952B3" alt="Nombre de visites" />
+</div>
         <p>© 2023 AABIL Aissa <a style="color:rgb(27, 38, 196)"  href="mailto:aissa.aabil@gmail.com">aissa.aabil@gmail.com</a>
         </p> </p>
     </footer>
